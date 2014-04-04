@@ -11,4 +11,9 @@ describe RecipeConverter do
     recipe_converter = RecipeConverter.new([{:sugar => 15}, {:salt => 30}])
     expect(recipe_converter.to_tablespoons).to eq [{:sugar => 1}, {:salt => 2}]
   end
+
+  it 'should convert grams to cups' do
+    recipe_converter = RecipeConverter.new([{:sugar => 16}, {:salt => 32}])
+    expect(recipe_converter.to_cups).to eq [{:sugar => 1}, {:salt => 2}]
+  end
 end

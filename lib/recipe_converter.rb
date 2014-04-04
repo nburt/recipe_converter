@@ -13,4 +13,13 @@ class RecipeConverter
     end
     @ingredients
   end
+
+  def to_cups
+    @ingredients.each do |ingredient|
+      ingredient.each do |name ,grams|
+        ingredient[name] = grams / 16
+      end
+    end
+    @ingredients
+  end
 end
